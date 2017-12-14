@@ -435,36 +435,3 @@ div.socbookmark a:hover img {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-/*****************************************
- just some design styles
-******************************************/
-body {
-    font-family: 'helvetica neue', 'arial', sans-serif;
-    background: #262626;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #262626;
-    background: #99AFF2;
-}
-
-td {
-    padding: 25px;
-    border: 4px solid #262626;
-}
-
-.td--1 {
-    width: 20%;
-}
-
-.td--2 {
-    width: 30%;
-}
-
-.td--3 {
-    width: 50%;
-    vertical-align: top;
-}
