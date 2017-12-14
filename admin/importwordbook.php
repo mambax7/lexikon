@@ -26,7 +26,6 @@
 use Xmf\Request;
 
 require_once __DIR__ . '/admin_header.php';
-
 $op = '';
 
 /****
@@ -99,12 +98,12 @@ function DefinitionImport($delete)
         // delete notifications
         xoops_notification_deletebymodule($xoopsModule->getVar('mid'));
         //get all entries
-        $resultE = $xoopsDB->query('SELECT entryID FROM ' . $xoopsDB->prefix('lxentries') . '');
+        $resultE = $xoopsDB->query('SELECT entryID FROM ' . $xoopsDB->prefix('lxentries') . ' ');
         while (list($entryID) = $xoopsDB->fetchRow($resultE)) {
             //delete comments for each entry
             xoops_comment_delete($xoopsModule->getVar('mid'), $entryID);
         }
-        $resultC = $xoopsDB->query('SELECT categoryID FROM ' . $xoopsDB->prefix('lxcategories') . '');
+        $resultC = $xoopsDB->query('SELECT categoryID FROM ' . $xoopsDB->prefix('lxcategories') . ' ');
         while (list($categoryID) = $xoopsDB->fetchRow($resultC)) {
             // delete permissions
             xoops_groupperm_deletebymoditem($xoopsModule->getVar('mid'), 'lexikon_view', $categoryID);
@@ -122,8 +121,8 @@ function DefinitionImport($delete)
      ****/
 
     $sql1    = $xoopsDB->query('
-                                SELECT *
-                                FROM ' . $xoopsDB->prefix('wbentries') . '
+                              SELECT *
+                              FROM ' . $xoopsDB->prefix('wbentries') . '
                               ');
     $result1 = $xoopsDB->getRowsNum($sql1);
     if ($result1) {
@@ -299,6 +298,7 @@ switch ($op) {
         $delete = isset($_GET['delete']) ? (int)$_GET['delete'] : (int)$_POST['delete'];
         DefinitionImport($delete);
         break;
+
     default:
         FormImport();
         break;

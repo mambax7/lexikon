@@ -56,7 +56,7 @@ if ($block['is_custom']) {
     $notice_for_tags = '<span style="font-size:x-small;font-weight:bold;">' . _AM_USEFULTAGS . '</span><br><span style="font-size:x-small;font-weight:normal;">' . sprintf(_AM_BLOCKTAG1, '{X_SITEURL}', XOOPS_URL . '/') . '</span>';
     $current_op      = 'clone' === @$_GET['op'] ? 'clone' : 'edit';
     $uri_to_myself   = XOOPS_URL . "/modules/blocksadmin/admin/admin.php?fct=blocksadmin&amp;op=$current_op&amp;bid={$block['bid']}";
-    $can_use_spaw    = true;
+    $can_use_spaw = true;
     if ($usespaw && $can_use_spaw) {
         // SPAW Config
         include XOOPS_ROOT_PATH . '/common/spaw/spaw_control.class.php';

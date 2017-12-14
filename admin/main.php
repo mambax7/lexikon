@@ -91,7 +91,7 @@ if (1 == $xoopsModuleConfig['multicats']) {
 if (!lx_FieldExists('logourl', $xoopsDB->prefix('lxcategories'))
     || lx_FieldExists('parent', $xoopsDB->prefix('lxcategories'))) {
     //    ++$i;
-    echo "<table><tr><td style='border-bottom:1px dotted #cfcfcf; line-height:16px;'><img src='"
+    echo "<table><tr><td  style='border-bottom: 1px dotted #cfcfcf; line-height: 16px;'><img src='"
          . XOOPS_URL
          . '/modules/'
          . $xoopsModule->getVar('dirname')
@@ -197,8 +197,8 @@ echo "<table class='outer' style='width:100%;'><tr><th><span style='font-weight:
                     <option value='uid' $sorttxtauthor>" . _AM_LEXIKON_AUTHOR . "</option>
                     <option value='datesub' $sorttxtcreated>" . _DATE . "</option>
                     <option value='categoryID' $sorttxtcats>" . _AM_LEXIKON_CATEGORY . "</option>
-               </select>
-               <select name='ordersel' onchange='submit()'>
+                </select>
+                <select name='ordersel' onchange='submit()'>
                     <option value='ASC' $ordertxtasc>" . _ASCENDING . "</option>
                     <option value='DESC' $ordertxtdesc>" . _DESCENDING . '</option>
                </select> ' . _AM_LEXIKON_STATUS . ":
@@ -209,23 +209,24 @@ echo "<table class='outer' style='width:100%;'><tr><th><span style='font-weight:
                     <option value='3' $selectedtxt3>" . _AM_LEXIKON_SHOWOFFLINE . " [$totaloffline]</option>
                     <option value='4' $selectedtxt4>" . _AM_LEXIKON_SHOWREQUESTS . " [$totalrequested]</option>
                 </select></td></tr></table>
-      </form>";
+    </form>";
 
 // Get number of entries in the selected state
 $statusSelected = (0 == $statussel) ? -1 : $statussel;
 $results        = $xoopsDB->query('SELECT COUNT(*)
-                                    FROM ' . $xoopsDB->prefix('lxentries') . '
-                                    ' . $cond . '
+                                FROM ' . $xoopsDB->prefix('lxentries') . '
+                                ' . $cond . '
                                     ORDER BY ' . $sortsel . ' ' . $ordersel . '
                                   ');
 list($numrows) = $xoopsDB->fetchRow($results);
 // creating the content
 $sql = 'SELECT entryID, categoryID, term, uid, datesub, offline
-         FROM ' . $xoopsDB->prefix('lxentries') . '
-         ' . $cond . '
-         ORDER BY ' . $sortsel . ' ' . $ordersel . ' ';
+       FROM ' . $xoopsDB->prefix('lxentries') . '
+       ' . $cond . '
+       ORDER BY ' . $sortsel . ' ' . $ordersel . ' ';
 
 $items            = $xoopsDB->query($sql, $xoopsModuleConfig['perpage'], $startentry);//missing nav. extras
+
 $totalItemsOnPage = count($numrows);
 
 
@@ -282,6 +283,7 @@ if ($numrows > 0) {
 
             echo "<tr class='" . $class . "'>";
             $class = ('even' === $class) ? 'odd' : 'even';
+
             echo "<td style='text-align:center;'>" . $entryID . '</td>';
             echo "<td style='text-align:left;'>" . $catname . '</td>';
             echo "<td style='text-align:left;'><a href='../entry.php?entryID=" . $entryID . "'>" . $term . '</td>';
@@ -305,5 +307,6 @@ $pagenav = new \XoopsPageNav($numrows, $xoopsModuleConfig['perpage'], $startentr
 echo '<div style="text-align:right;">' . $pagenav->renderNav(12) . '</div>';
 echo "<br>\n";
 echo '</div>';
+
 //----
 require_once __DIR__ . '/admin_footer.php';

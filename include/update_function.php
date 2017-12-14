@@ -28,6 +28,9 @@
 
 //error_reporting(E_ALL);
 
+
+use Xoopsmodules\lexikon;
+
 /**
  * @param      $module
  * @param null $prev_version

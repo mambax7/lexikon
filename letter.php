@@ -52,7 +52,7 @@ if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
 $alpha = $utility::getAlphaArray();
 $xoopsTpl->assign('alpha', $alpha);
 
-list($howmanyother) = $xoopsDB->fetchRow($xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('lxentries') . " WHERE init = '#' AND offline ='0' " . $catperms . ''));
+list($howmanyother) = $xoopsDB->fetchRow($xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('lxentries') . " WHERE init = '#' AND offline ='0' " . $catperms . ' '));
 $xoopsTpl->assign('totalother', $howmanyother);
 
 // To display the list of categories
@@ -224,6 +224,6 @@ if ($publishedwords = 0) {
     }
 }
 
-$xoopsTpl->assign('xoops_module_header', '<link rel="stylesheet" type="text/css" href="assets/css/style.css" >');
+$xoopsTpl->assign('xoops_module_header', '<link rel="stylesheet" type="text/css" href="assets/css/style.css">');
 
 include XOOPS_ROOT_PATH . '/footer.php';

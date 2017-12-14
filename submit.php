@@ -15,7 +15,7 @@ require_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 global $xoTheme, $xoopsUser, $xoopsConfig, $xoopsModuleConfig, $xoopsModule;
 
-$result = $xoopsDB->query('SELECT * FROM ' . $xoopsDB->prefix('lxcategories') . '');
+$result = $xoopsDB->query('SELECT * FROM ' . $xoopsDB->prefix('lxcategories') . ' ');
 if ('0' == $xoopsDB->getRowsNum($result) && '1' == $xoopsModuleConfig['multicats']) {
     redirect_header('index.php', 1, _AM_LEXIKON_NOCOLEXISTS);
 }
@@ -297,7 +297,7 @@ switch ($op) {
         $xoopsTpl->assign('lang_modulename', $xoopsModule->name());
         $xoopsTpl->assign('lang_moduledirname', $xoopsModule->getVar('dirname'));
         $xoopsTpl->assign('xoops_pagetitle', $myts->htmlSpecialChars($xoopsModule->name()) . ' - ' . _MD_LEXIKON_SUBMITART);
-        $xoopsTpl->assign('xoops_module_header', '<link rel="stylesheet" type="text/css" href="assets/css/style.css" >');
+        $xoopsTpl->assign('xoops_module_header', '<link rel="stylesheet" type="text/css" href="assets/css/style.css">');
         // Meta data
         $meta_description = _MD_LEXIKON_SUBMITART . ' - ' . $myts->htmlSpecialChars($xoopsModule->name());
         if (isset($xoTheme) && is_object($xoTheme)) {

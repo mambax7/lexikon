@@ -23,6 +23,8 @@ $moduleDirName = basename(dirname(__DIR__));
 
 require_once __DIR__ . '/../class/Helper.php';
 require_once __DIR__ . '/../class/Utility.php';
+require_once __DIR__ . '/../class/EntriesHandler.php';
+require_once __DIR__ . '/../class/CategoriesHandler.php';
 
 if (!defined('LEXIKON_MODULE_PATH')) {
     define('LEXIKON_DIRNAME', basename(dirname(__DIR__)));
@@ -46,8 +48,8 @@ $configurator = new lexikon\Configurator();
 $helper->loadLanguage('common');
 
 //handlers
-//$categoryHandler     = new wfdownloads\CategoryHandler($db);
-//$downloadHandler     = new wfdownloads\DownloadHandler($db);
+$entriesHandler     = new lexikon\EntriesHandler($db);
+$categoriesHandler     = new lexikon\CategoriesHandler($db);
 
 $pathIcon16    = Xmf\Module\Admin::iconUrl('', 16);
 $pathIcon32    = Xmf\Module\Admin::iconUrl('', 32);

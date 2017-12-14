@@ -292,3 +292,116 @@ define('_AM_LEXIKON_IMPORT_PROCESSED', 'Processed');
 define('_AM_LEXIKON_IMPORT_FINISH', 'Import finished!');
 define('_AM_LEXIKON_IMPORT_TO_ADMIN', 'Back to Admin');
 define('_AM_LEXIKON_IMPORT_ERROR_MODULE', 'Module Dictionary not found on this site.');
+
+
+
+
+
+
+
+
+
+
+
+//Index
+define('AM_LEXIKON_STATISTICS', 'Lexikon statistics');
+define('AM_LEXIKON_THEREARE_CATEGORY', "There are <span class='bold'>%s</span> Category in the database");
+define('AM_LEXIKON_THEREARE_ENTRIES', "There are <span class='bold'>%s</span> Entries in the database");
+//Buttons
+define('AM_LEXIKON_ADD_CATEGORIES', 'Add new Category');
+define('AM_LEXIKON_CATEGORIES_LIST', 'List of Category');
+define('AM_LEXIKON_ADD_ENTRIES', 'Add new Entries');
+define('AM_LEXIKON_ENTRIES_LIST', 'List of Entries');
+//General
+define('AM_LEXIKON_FORMOK', 'Registered successfull');
+define('AM_LEXIKON_FORMDELOK', 'Deleted successfull');
+define('AM_LEXIKON_FORMSUREDEL', "Are you sure to Delete: <span class='bold red'>%s</span></b>");
+define('AM_LEXIKON_FORMSURERENEW', "Are you sure to Renew: <span class='bold red'>%s</span></b>");
+define('AM_LEXIKON_FORMUPLOAD', 'Upload');
+define('AM_LEXIKON_FORMIMAGE_PATH', 'File presents in %s');
+define('AM_LEXIKON_FORM_ACTION', 'Action');
+define('AM_LEXIKON_SELECT', 'Select action for selected item(s)');
+define('AM_LEXIKON_SELECTED_DELETE', 'Delete selected item(s)');
+define('AM_LEXIKON_SELECTED_ACTIVATE', 'Activate selected item(s)');
+define('AM_LEXIKON_SELECTED_DEACTIVATE', 'De-activate selected item(s)');
+define('AM_LEXIKON_SELECTED_ERROR', 'You selected nothing to delete');
+define('AM_LEXIKON_CLONED_OK', 'Record cloned successfully');
+define('AM_LEXIKON_CLONED_FAILED', 'Cloning of the record has failed');
+
+// Categories
+define('AM_LEXIKON_CATEGORIES_ADD', 'Add a categories');
+define('AM_LEXIKON_CATEGORIES_EDIT', 'Edit categories');
+define('AM_LEXIKON_CATEGORIES_DELETE', 'Delete categories');
+define('AM_LEXIKON_CATEGORIES_CATEGORYID', 'ID');
+define('AM_LEXIKON_CATEGORIES_NAME', 'Category');
+define('AM_LEXIKON_CATEGORIES_DESCRIPTION', 'Description');
+define('AM_LEXIKON_CATEGORIES_TOTAL', 'Total');
+define('AM_LEXIKON_CATEGORIES_WEIGHT', 'Weight');
+define('AM_LEXIKON_CATEGORIES_LOGOURL', 'Logo URL');
+// Entries
+define('AM_LEXIKON_ENTRIES_ADD', 'Add a entries');
+define('AM_LEXIKON_ENTRIES_EDIT', 'Edit entries');
+define('AM_LEXIKON_ENTRIES_DELETE', 'Delete entries');
+define('AM_LEXIKON_ENTRIES_ENTRYID', 'ID');
+define('AM_LEXIKON_ENTRIES_CATEGORYID', 'Category');
+define('AM_LEXIKON_ENTRIES_TERM', 'Term');
+define('AM_LEXIKON_ENTRIES_INIT', 'Init');
+define('AM_LEXIKON_ENTRIES_DEFINITION', 'Definition');
+define('AM_LEXIKON_ENTRIES_REF', 'Reference');
+define('AM_LEXIKON_ENTRIES_URL', 'URL');
+define('AM_LEXIKON_ENTRIES_UID', 'User');
+define('AM_LEXIKON_ENTRIES_SUBMIT', 'Submitter');
+define('AM_LEXIKON_ENTRIES_DATESUB', 'Submitted');
+define('AM_LEXIKON_ENTRIES_COUNTER', 'Counter');
+define('AM_LEXIKON_ENTRIES_HTML', 'HTML');
+define('AM_LEXIKON_ENTRIES_SMILEY', 'Smiley');
+define('AM_LEXIKON_ENTRIES_XCODES', 'xCodes');
+define('AM_LEXIKON_ENTRIES_BREAKS', 'Breaks');
+define('AM_LEXIKON_ENTRIES_BLOCK', 'Block');
+define('AM_LEXIKON_ENTRIES_OFFLINE', 'Offline');
+define('AM_LEXIKON_ENTRIES_NOTIFYPUB', 'Notify on Pub');
+define('AM_LEXIKON_ENTRIES_REQUEST', 'Request');
+define('AM_LEXIKON_ENTRIES_COMMENTS', 'Comments');
+define('AM_LEXIKON_ENTRIES_ITEM_TAG', 'Tag');
+//Blocks.php
+//Permissions
+define('AM_LEXIKON_PERMISSIONS_GLOBAL', 'Global permissions');
+define('AM_LEXIKON_PERMISSIONS_GLOBAL_DESC', 'Only users in the group that you select may global this');
+define('AM_LEXIKON_PERMISSIONS_GLOBAL_4', 'Rate from user');
+define('AM_LEXIKON_PERMISSIONS_GLOBAL_8', 'Submit from user side');
+define('AM_LEXIKON_PERMISSIONS_GLOBAL_16', 'Auto approve');
+define('AM_LEXIKON_PERMISSIONS_APPROVE', 'Permissions to approve');
+define('AM_LEXIKON_PERMISSIONS_APPROVE_DESC', 'Only users in the group that you select may approve this');
+define('AM_LEXIKON_PERMISSIONS_VIEW', 'Permissions to view');
+define('AM_LEXIKON_PERMISSIONS_VIEW_DESC', 'Only users in the group that you select may view this');
+define('AM_LEXIKON_PERMISSIONS_SUBMIT', 'Permissions to submit');
+define('AM_LEXIKON_PERMISSIONS_SUBMIT_DESC', 'Only users in the group that you select may submit this');
+define('AM_LEXIKON_PERMISSIONS_GPERMUPDATED', 'Permissions have been changed successfully');
+define('AM_LEXIKON_PERMISSIONS_NOPERMSSET', 'Permission cannot be set: No entries created yet! Please create a entries first.');
+
+//Errors
+define('AM_LEXIKON_UPGRADEFAILED0', "Update failed - couldn't rename field '%s'");
+define('AM_LEXIKON_UPGRADEFAILED1', "Update failed - couldn't add new fields");
+define('AM_LEXIKON_UPGRADEFAILED2', "Update failed - couldn't rename table '%s'");
+define('AM_LEXIKON_ERROR_COLUMN', 'Could not create column in database : %s');
+define('AM_LEXIKON_ERROR_BAD_XOOPS', 'This module requires XOOPS %s+ (%s installed)');
+define('AM_LEXIKON_ERROR_BAD_PHP', 'This module requires PHP version %s+ (%s installed)');
+define('AM_LEXIKON_ERROR_TAG_REMOVAL', 'Could not remove tags from Tag Module');
+//directories
+define('AM_LEXIKON_AVAILABLE', "<span style='color : green;'>Available. </span>");
+define('AM_LEXIKON_NOTAVAILABLE', "<span style='color : red;'>is not available. </span>");
+define('AM_LEXIKON_NOTWRITABLE', "<span style='color : red;'>" . ' should have permission ( %1$d ), but it has ( %2$d )' . '</span>');
+define('AM_LEXIKON_CREATETHEDIR', 'Create it');
+define('AM_LEXIKON_SETMPERM', 'Set the permission');
+define('AM_LEXIKON_DIRCREATED', 'The directory has been created');
+define('AM_LEXIKON_DIRNOTCREATED', 'The directory can not be created');
+define('AM_LEXIKON_PERMSET', 'The permission has been set');
+define('AM_LEXIKON_PERMNOTSET', 'The permission can not be set');
+define('AM_LEXIKON_VIDEO_EXPIREWARNING', 'The publishing date is after expiration date!!!');
+//Sample Data
+define('AM_LEXIKON_ADD_SAMPLEDATA', 'Add Sample Data (will delete ALL current data)');
+define('AM_LEXIKON_SAMPLEDATA_SUCCESS', 'Sample Date uploaded successfully');
+
+//Error NoFrameworks
+define('_AM_ERROR_NOFRAMEWORKS', 'Error: You don&#39;t use the Frameworks \'admin module\'. Please install this Frameworks');
+define('AM_LEXIKON_MAINTAINEDBY', 'is maintained by the');

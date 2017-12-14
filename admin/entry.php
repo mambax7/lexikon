@@ -62,14 +62,14 @@ function entryDefault()
 
     // create existing terms table
     $resultA1 = $xoopsDB->query('SELECT COUNT(*)
-                                 FROM ' . $xoopsDB->prefix('lxentries') . '
-                                 WHERE submit = 0');
+                                   FROM ' . $xoopsDB->prefix('lxentries') . '
+                                   WHERE submit = 0');
     list($numrows) = $xoopsDB->fetchRow($resultA1);
 
     $sql      = 'SELECT entryID, categoryID, term, uid, datesub, offline
-                 FROM ' . $xoopsDB->prefix('lxentries') . '
-                 WHERE submit = 0
-                 ORDER BY entryID DESC';
+           FROM ' . $xoopsDB->prefix('lxentries') . '
+           WHERE submit = 0
+           ORDER BY entryID DESC';
     $resultA2 = $xoopsDB->query($sql, $xoopsModuleConfig['perpage'], $startentry);
     $result   = $xoopsDB->query($sql, $xoopsModuleConfig['perpage']);
 
@@ -95,8 +95,8 @@ function entryDefault()
 
         while (list($entryID, $categoryID, $term, $uid, $created, $offline) = $xoopsDB->fetchRow($resultA2)) {
             $resultA3 = $xoopsDB->query('SELECT name
-                                         FROM ' . $xoopsDB->prefix('lxcategories') . "
-                                         WHERE categoryID = '$categoryID'");
+                                           FROM ' . $xoopsDB->prefix('lxcategories') . "
+                                           WHERE categoryID = '$categoryID'");
             list($name) = $xoopsDB->fetchRow($resultA3);
 
             $sentby  = \XoopsUserUtility::getUnameFromId($uid);
@@ -145,7 +145,7 @@ function entryDefault()
 function entryEdit($entryID = '')
 {
     global $xoopsUser, $xoopsConfig, $xoopsDB, $xoopsModuleConfig, $xoopsModule, $init;
-    $myts = \MyTextSanitizer::getInstance();
+    $myts    = \MyTextSanitizer::getInstance();
     $utility = new lexikon\Utility();
     /**
      * Clear all variables before we start
@@ -202,9 +202,9 @@ function entryEdit($entryID = '')
     // If there is a parameter, and the id exists, retrieve data: we're editing an entry
     if ($entryID) {
         $result = $xoopsDB->query('
-                                  SELECT categoryID, term, init, definition, ref, url, uid, submit, datesub, html, smiley, xcodes, breaks, block, offline, notifypub, request
-                                  FROM ' . $xoopsDB->prefix('lxentries') . "
-                                  WHERE entryID = '$entryID'");
+                                     SELECT categoryID, term, init, definition, ref, url, uid, submit, datesub, html, smiley, xcodes, breaks, block, offline, notifypub, request
+                                     FROM ' . $xoopsDB->prefix('lxentries') . "
+                                     WHERE entryID = '$entryID'");
         list($categoryID, $term, $init, $definition, $ref, $url, $uid, $submit, $datesub, $html, $smiley, $xcodes, $breaks, $block, $offline, $notifypub, $request) = $xoopsDB->fetchRow($result);
 
         if (!$xoopsDB->getRowsNum($result)) {
@@ -318,6 +318,7 @@ function entryEdit($entryID = '')
     $button_tray->addElement($hidden);
 
     if (!$entryID) { // there's no entryID? Then it's a new entry
+
         $butt_create = new \XoopsFormButton('', '', _AM_LEXIKON_CREATE, 'submit');
         $butt_create->setExtra('onclick="this.form.elements.op.value=\'addentry\'"');
         $button_tray->addElement($butt_create);
@@ -364,7 +365,7 @@ function entrySave($entryID = '')
     $smiley  = isset($_POST['smiley']) ? (int)$_POST['smiley'] : (int)$_GET['smiley'];
     $xcodes  = isset($_POST['xcodes']) ? (int)$_POST['xcodes'] : (int)$_GET['xcodes'];
     $offline = isset($_POST['offline']) ? (int)$_POST['offline'] : (int)$_GET['offline'];
-    $term    = $myts->addSlashes(xoops_trim($_POST['term']));
+    $term = $myts->addSlashes(xoops_trim($_POST['term']));
     // LionHell pour initiale automatique
     $init = mb_substr($term, 0, 1);
     $init = preg_match('/[a-zA-Zа-яА-Я0-9]/', $init) ? mb_strtoupper($init) : '#';
@@ -374,8 +375,8 @@ function entrySave($entryID = '')
     $ref        = isset($_POST['ref']) ? $myts->addSlashes($myts->censorString($_POST['ref'])) : '';
     $url        = isset($_POST['url']) ? $myts->addSlashes($_POST['url']) : '';
 
-    $date      = time();
-    $submit    = 0;
+    $date   = time();
+    $submit = 0;
     $notifypub = isset($_POST['notifypub']) ? (int)$_POST['notifypub'] : (int)$_GET['notifypub'];
     $request   = 0;
     $uid       = isset($_POST['author']) ? (int)$_POST['author'] : $xoopsUser->uid();

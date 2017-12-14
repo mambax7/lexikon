@@ -93,12 +93,12 @@ function DefinitionImport($delete)
         // delete notifications
         xoops_notification_deletebymodule($xoopsModule->getVar('mid'));
         //get all entries
-        $result3 = $xoopsDB->query('SELECT entryID FROM ' . $xoopsDB->prefix('lxentries') . '');
+        $result3 = $xoopsDB->query('SELECT entryID FROM ' . $xoopsDB->prefix('lxentries') . ' ');
         //now for each entry, delete the coments
         while (list($entryID) = $xoopsDB->fetchRow($result3)) {
             xoops_comment_delete($xoopsModule->getVar('mid'), $entryID);
         }
-        $resultC = $xoopsDB->query('SELECT categoryID FROM ' . $xoopsDB->prefix('lxcategories') . '');
+        $resultC = $xoopsDB->query('SELECT categoryID FROM ' . $xoopsDB->prefix('lxcategories') . ' ');
         while (list($categoryID) = $xoopsDB->fetchRow($resultC)) {
             // delete permissions
             xoops_groupperm_deletebymoditem($xoopsModule->getVar('mid'), 'lexikon_view', $categoryID);
@@ -116,8 +116,8 @@ function DefinitionImport($delete)
      ****/
 
     $sql1 = $xoopsDB->query('
-                            SELECT *
-                            FROM ' . $xoopsDB->prefix('dictionary') . ' ');
+                              SELECT *
+                              FROM ' . $xoopsDB->prefix('dictionary') . ' ');
 
     $result1 = $xoopsDB->getRowsNum($sql1);
     if ($result1) {
@@ -178,8 +178,8 @@ function DefinitionImport($delete)
      ****/
 
     $sqlQuery = $xoopsDB->query('
-                                SELECT mid FROM ' . $xoopsDB->prefix('modules') . "
-                                WHERE dirname = 'dictionary'");
+                              SELECT mid FROM ' . $xoopsDB->prefix('modules') . "
+                              WHERE dirname = 'dictionary'");
     list($dicID) = $xoopsDB->fetchRow($sqlQuery);
     echo '<p>' . _AM_LEXIKON_IMPORT_MODULE_ID . ': ' . $dicID . '</p>';
     echo '<p>' . _AM_LEXIKON_IMPORT_MODULE_LEX_ID . ': ' . $xoopsModule->getVar('mid') . '</p><br>';

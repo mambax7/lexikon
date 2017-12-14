@@ -315,6 +315,9 @@ $modversion['templates'][]  = [
     'description' => 'Lexikon Definition Tagbar'
 ];
 
+$modversion['templates'][] = array('file' => 'admin/lexikon_admin_entries.tpl', 'description' => '');
+$modversion['templates'][] = array('file' => 'admin/lexikon_admin_categories.tpl', 'description' => '');
+
 // Config Settings
 $modversion['config'] = [];
 
@@ -674,6 +677,24 @@ $modversion['config'][] = [
     'valuetype'   => 'int',
     'default'     => 1
 ];
+
+
+$modversion['config'][] = array(
+    'name' => 'adminpager',
+    'title' => 'MI_LEXIKON_ADMINPAGER',
+    'description' => 'MI_LEXIKON_ADMINPAGER_DESC',
+    'formtype' => 'textbox',
+    'valuetype' => 'int',
+    'default' => 10);
+
+$modversion['config'][] = array(
+    'name' => 'userpager',
+    'title' => 'MI_LEXIKON_USERPAGER',
+    'description' => 'MI_LEXIKON_USERPAGER_DESC',
+    'formtype' => 'textbox',
+    'valuetype' => 'int',
+    'default' => 10);
+
 
 //Comments (Mondarse)
 $modversion['hasComments']          = 1;

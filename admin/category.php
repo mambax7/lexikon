@@ -120,7 +120,7 @@ function categoryEdit($categoryID = '')
     require_once XOOPS_ROOT_PATH . '/class/xoopsform/grouppermform.php';
 
     $utility      = new lexikon\Utility();
-
+    
     $weight      = 1;
     $name        = '';
     $description = '';

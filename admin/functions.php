@@ -88,7 +88,7 @@ function lx_AddField($field, $table)
 {
     global $xoopsDB;
     //naja !
-    $result = $xoopsDB->queryF('ALTER TABLE ' . $table . ' ADD ' . $field . '');
+    $result = $xoopsDB->queryF('ALTER TABLE ' . $table . ' ADD ' . $field . ' ');
 
     return $result;
 }
@@ -137,6 +137,7 @@ function lx_importMenu($currentoption = 0, $breadcrumb = '')
               <strong style='color: #2F5376; margin-top:6px; font-size:medium'>" . _AM_LEXIKON_IMPORT_MENU . '</strong><br>';
     if ($cf > 0) {
         echo '<span style="font-size:x-small">' . _AM_LEXIKON_OTHERMODS . '</span><br><br>';
+
     } else {
         echo '<span style="font-size:x-small; color:red;">' . _AM_LEXIKON_NOOTHERMODS . '</span><br><br>';
     }
@@ -349,9 +350,9 @@ function lx_GetStatistics($limit)
 function lx_buildTable()
 {
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule;
-    echo "<div style='color:#2F5376; margin:6px 0 0 0;'>";
+    echo "<div style='color: #2F5376; margin: 6px 0 0 0; '>";
     echo "<table class='outer' style='width:100%;'>";
-    echo '<tr>';
+    echo '<tr >';
     echo "<th style='width:40px; text-align:center;'>" . _AM_LEXIKON_ENTRYID . '</td>';
     echo "<th style='width:100px; text-align:center;'>" . _AM_LEXIKON_ENTRYCATNAME . '</td>';
     echo "<th style='text-align:center;'>" . _AM_LEXIKON_TERM . '</td>';
@@ -404,7 +405,7 @@ function lx_getinit($init)
 {
     global $init;
     echo "<div><select name='init'>";
-    echo "<option value='#'>&nbsp;#&nbsp;</option>";
+    echo "<option value='#'>&nbsp; # &nbsp;</option>";
     for ($a = 48; $a < (48 + 10); ++$a) {
         if (uchr($a) == $init) {
             $opt_selected = 'selected';
@@ -431,7 +432,6 @@ function lx_getinit($init)
     }*/
     echo '</select></div>';
 }
-
 /**
  * @param $a
  * @return string

@@ -95,12 +95,12 @@ function DefinitionImport($delete)
         // delete notifications
         xoops_notification_deletebymodule($xoopsModule->getVar('mid'));
         //get all entries
-        $result3 = $xoopsDB->query('SELECT entryID FROM ' . $xoopsDB->prefix('lxentries') . '');
+        $result3 = $xoopsDB->query('SELECT entryID FROM ' . $xoopsDB->prefix('lxentries') . ' ');
         //delete comments for each entry
         while (list($entryID) = $xoopsDB->fetchRow($result3)) {
             xoops_comment_delete($xoopsModule->getVar('mid'), $entryID);
         }
-        $resultC = $xoopsDB->query('SELECT categoryID FROM ' . $xoopsDB->prefix('lxcategories') . '');
+        $resultC = $xoopsDB->query('SELECT categoryID FROM ' . $xoopsDB->prefix('lxcategories') . ' ');
         while (list($categoryID) = $xoopsDB->fetchRow($resultC)) {
             // delete permissions
             xoops_groupperm_deletebymoditem($xoopsModule->getVar('mid'), 'lexikon_view', $categoryID);
@@ -117,7 +117,7 @@ function DefinitionImport($delete)
      * Import ENTRIES
      ****/
     $sqlQuery = $xoopsDB->query('SELECT id, lettre, nom, definition, affiche
-                                  FROM ' . $xoopsDB->prefix('glossaire'));
+                              FROM ' . $xoopsDB->prefix('glossaire'));
     $fecha    = time() - 1;
     while ($sqlfetch = $xoopsDB->fetchArray($sqlQuery)) {
         $glo               = [];
@@ -159,9 +159,9 @@ function DefinitionImport($delete)
     }
 
     $sqlQuery = $xoopsDB->query('
-                                SELECT mid
-                                FROM ' . $xoopsDB->prefix('modules') . "
-                                WHERE dirname = 'glossaire'");
+                              SELECT mid
+                              FROM ' . $xoopsDB->prefix('modules') . "
+                              WHERE dirname = 'glossaire'");
     list($gloID) = $xoopsDB->fetchRow($sqlQuery);
     echo '<p>' . _AM_LEXIKON_IMPORT_MODULE_ID . ': ' . $gloID . '</p>';
     echo '<p>' . _AM_LEXIKON_IMPORT_MODULE_LEX_ID . ': ' . $xoopsModule->getVar('mid') . '<br>';

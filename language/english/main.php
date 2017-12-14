@@ -227,6 +227,61 @@ define('_MD_AM_ADGS', 'ADGS');
 define('_MD_AM_DBUPDATED', 'Database updated');
 define('_MD_LEXIKON_MUSTREGFIRST', 'You must register first');
 
+
+
+
+define('MD_LEXIKON_ADMIN', 'Admin');
+define('MD_LEXIKON_INDEX', 'Home');
+define('MD_LEXIKON_ACTION', 'Action');
+define('MD_LEXIKON_VIEW', 'View');
+define('MD_LEXIKON_PRINT', 'Print');
+define('MD_LEXIKON_TELL_A_FRIEND', 'Tell A Friend');
+
+define('MD_LEXIKON_TITLE', 'Lexikon');
+define('MD_LEXIKON_DESC', 'This module is for doing following...');
+define('MD_LEXIKON_INDEX_DESC', 'This module is for doing following...');
+// Category
+define('MD_LEXIKON_CATEGORIES', 'Category');
+define('MD_LEXIKON_CATEGORIES_DESC', 'Category description');
+define('MD_LEXIKON_CATEGORIES_CATEGORYID', 'ID');
+define('MD_LEXIKON_CATEGORIES_NAME', 'Category');
+define('MD_LEXIKON_CATEGORIES_DESCRIPTION', 'Description');
+define('MD_LEXIKON_CATEGORIES_TOTAL', 'Total');
+define('MD_LEXIKON_CATEGORIES_WEIGHT', 'Weight');
+define('MD_LEXIKON_CATEGORIES_LOGOURL', 'Logo URL');
+// Entries
+define('MD_LEXIKON_ENTRIES', 'Entries');
+define('MD_LEXIKON_ENTRIES_DESC', 'Entries description');
+define('MD_LEXIKON_ENTRIES_ENTRYID', 'ID');
+define('MD_LEXIKON_ENTRIES_CATEGORYID', 'Category');
+define('MD_LEXIKON_ENTRIES_TERM', 'Term');
+define('MD_LEXIKON_ENTRIES_INIT', 'Init');
+define('MD_LEXIKON_ENTRIES_DEFINITION', 'Definition');
+define('MD_LEXIKON_ENTRIES_REF', 'Reference');
+define('MD_LEXIKON_ENTRIES_URL', 'URL');
+define('MD_LEXIKON_ENTRIES_UID', 'User');
+define('MD_LEXIKON_ENTRIES_SUBMIT', 'Submitter');
+define('MD_LEXIKON_ENTRIES_DATESUB', 'Submitted');
+define('MD_LEXIKON_ENTRIES_COUNTER', 'Counter');
+define('MD_LEXIKON_ENTRIES_HTML', 'HTML');
+define('MD_LEXIKON_ENTRIES_SMILEY', 'Smiley');
+define('MD_LEXIKON_ENTRIES_XCODES', 'xCodes');
+define('MD_LEXIKON_ENTRIES_BREAKS', 'Breaks');
+define('MD_LEXIKON_ENTRIES_BLOCK', 'Block');
+define('MD_LEXIKON_ENTRIES_OFFLINE', 'Offline');
+define('MD_LEXIKON_ENTRIES_NOTIFYPUB', 'Notify on Pub');
+define('MD_LEXIKON_ENTRIES_REQUEST', 'Request');
+define('MD_LEXIKON_ENTRIES_COMMENTS', 'Comments');
+define('MD_LEXIKON_ENTRIES_ITEM_TAG', 'Tag');
+
+
+
+
+
+
+
+
+
 /**
  * Get local Alphabet
  * @return array
@@ -274,3 +329,7 @@ function getAlphabet()
 
     return $alphabet;
 }
+
+
+
+
